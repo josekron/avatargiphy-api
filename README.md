@@ -1,6 +1,6 @@
 # Description
 
-Flask app with an integration with the **Giphy API** with endpoints to return a list of gifs, update an user with a gif as avatar, and fetch a list of users by either partial username or name.
+Flask app with an integration with the **Giphy API** with endpoints to return a list of gifs, update a user with a gif as avatar, and fetch a list of users by either partial username or name.
 
 There's room for improvement, but this project was a take-home test with a time limit of 1.5 hours.
 
