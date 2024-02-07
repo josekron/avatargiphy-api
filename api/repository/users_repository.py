@@ -21,6 +21,11 @@ class UsersRepository:
     def search_user_by_username(self, username):
         return [self.cache.get(key) for key in self.cache.cache._cache
                    if username in self.cache.get(key)['username']]
+    
+    def create_user(self, name, username, avatar_id, avatar):
+        self.cache.set(len(self.cache.cache._cache), {'id': len(self.cache.cache._cache), 'name': name, 'username': username,
+                                 'avatar_id': avatar_id, 'avatar': avatar})
+        return self.cache.get(len(self.cache.cache._cache) - 1)
 
     def update_user_avatar(self, user_id, avatar_id, avatar):
         user = self.cache.get(user_id)
@@ -41,9 +46,9 @@ class UsersRepository:
         self.cache.set(1, {'id': 1, 'name': 'Jose', 'username': 'joseahp',
                            'avatar_id': 'wzzJHfPD1Sgc2HoZ9x',
                            'avatar': 'https://giphy.com/embed/sZ5CxgSUsRclBTQeGc'})
-        self.cache.set(2, {'id': 2, 'name': 'Irina', 'username': 'irinaid',
+        self.cache.set(2, {'id': 2, 'name': 'Jen', 'username': 'jennn',
                            'avatar_id': 'wzzJHfPD1Sgc2HoZ9x',
                            'avatar': 'https://giphy.com/embed/sZ5CxgSUsRclBTQeGc'})
-        self.cache.set(3, {'id': 3, 'name': 'anosh', 'username': 'KingNoosh',
+        self.cache.set(3, {'id': 3, 'name': 'tom', 'username': 'tomtom',
                            'avatar_id': 'wzzJHfPD1Sgc2HoZ9x',
                            'avatar': 'https://giphy.com/embed/sZ5CxgSUsRclBTQeGc'})
